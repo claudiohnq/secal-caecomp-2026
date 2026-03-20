@@ -1,21 +1,20 @@
-# Projeto Portfólio SECAL 2026 CAECOMP 
+# [SECAL 2026 CAECOMP] | Minicurso desenvolvimento WEB 
 
-### 1. Semântica HTML
-Em vez de usar apenas `<div>` para tudo, a estrutura do site foi construída com tags semânticas para melhorar a acessibilidade e o SEO:
-* `<header>`: Para a barra de navegação principal.
-* `<main>`: Envolvendo o conteúdo central e exclusivo da página (a tela inicial).
-* `<section>`: Para dividir os assuntos da página (seções "Sobre" e "Contato").
-* `<footer>`: Para o rodapé com a assinatura do projeto.
+### 1. A Estrutura Semântica (HTML)
+Em vez de usar `<div>` para tudo, o site usa tags com significados claros:
+* **`<header id="navbar">`**: O cabeçalho. Guarda a logo e o menu.
+* **`<main>`**: O "corpo" principal da página.
+* **`<section>`**: Os blocos de conteúdo (Início, Sobre, Contato). O `id` (ex: `#sobre`) serve como um "endereço" para a página rolar até o lugar certo quando clicamos no menu.
+* **`<footer>`**: O rodapé, onde fica a assinatura.
 
-### 2. Layout com CSS Flexbox (`display: flex`)
-O Flexbox foi a ferramenta principal para o alinhamento de quase todos os elementos:
-* **Navbar:** Usado para empurrar a logo para a esquerda e o menu para a direita (`justify-content: space-between`).
-* **Seção Sobre:** Criou as duas colunas (Texto e Foto) lado a lado, permitindo que elas quebrem de linha em telas menores de forma fluida (`flex-wrap: wrap`).
-* **Centralização:** Usado extensivamente para alinhar textos e ícones perfeitamente no centro das caixas (`align-items: center`, `justify-content: center`).
+### 2. O Motor do Layout: Flexbox (CSS)
+Usei o `display: flex;` para organizar os elementos na tela de um jeito bem prático e sem complicação:
+* **`justify-content: space-between;`**: Usado na Navbar. Ele pega a logo e os links e empurra cada um para um canto da tela (um para a extrema esquerda, outro para a direita).
+* **`gap: 70px;`**: Usado na seção Sobre para afastar o texto da foto. É um atalho perfeito para criar um "respiro" entre os itens sem precisar calcular margens.
+* **`align-items: flex-start;`**: Garante que a caixa de texto e a foto fiquem alinhadas retinhas lá em cima (pelo topo).
 
-### 3. Variáveis CSS (Custom Properties)
-Implementei variáveis globais no `:root` do CSS. Isso permite alterar as cores principais do site mudando apenas uma linha de código, facilitando a manutenção e a criação de futuros temas (como um *Dark Mode*).
+### 3. Variáveis de Cor (`:root`)
 ```css
 :root {
-    --cor-da-navbar: #ffcc00;
+    --cor-principal: #061a6c;
 }
